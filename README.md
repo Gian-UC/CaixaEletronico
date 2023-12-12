@@ -1,31 +1,15 @@
-# Simulador de Caixa Eletrônico em C#
+# Simulador de Caixa Eletrônico Seguro em C#
 
-Este é um projeto simples de simulador de caixa eletrônico desenvolvido em C# usando o Visual Studio Code. O simulador permite a consulta de saldo, saques, depósitos e a saída do programa.
+Este projeto é um simulador de caixa eletrônico desenvolvido em C# usando o Visual Studio Code. O simulador incorpora práticas recomendadas de segurança de autenticação, incluindo o uso de hash para senhas, salting e métodos seguros de comparação.
 
 
-### Funcionalidades Principais
+### Melhorias de Segurança Implementadas
 
-1. Consulta de Saldo:
-   - Opção 1 no menu.
-   - Mostra o saldo atual na conta.
+1. Hash para Senhas:
+   - As senhas são armazenadas em formato de hash usando o algoritmo SHA-256.
 
-2. Realizar Saque:
-   - Opção 2 no menu.
-   - Solicita ao usuário o valor desejado.
-   - Verifica se há saldo suficiente.
-   - Atualiza o saldo e exibe uma mensagem de sucesso.
+2. Adição de Sal às Senhas:
+   - Cada usuário tem um "sal" aleatório exclusivo, adicionado à senha antes de gerar o hash.
 
-3. Realizar Depósito:
-   - Opção 3 no menu.
-   - Solicita ao usuário o valor a ser depositado.
-   - Atualiza o saldo e exibe uma mensagem de sucesso.
-
-4. Sair do Programa:
-   - Opção 4 no menu.
-   - Encerra o programa.
-
-### Observações Importantes
-
-- O saldo inicial é definido como R$ 1000 para fins de exemplo e pode ser ajustado no código conforme necessário.
-- Este é um projeto simples e pode ser expandido com mais recursos, como autenticação do usuário, histórico de transações, etc.
-
+3. Método Seguro para Comparar Senhas:
+   - A comparação de senhas é feita de forma segura, garantindo que mesmo se duas senhas forem iguais, seus hashes não serão.
